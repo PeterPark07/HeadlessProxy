@@ -19,7 +19,7 @@ def render_page(url):
     
     return rendered_page
 
-@app.route('/proxy/<path:url>')
+@app.route('/<path:url>')
 def proxy(url):
     try:
         rendered_page = render_page(url)
