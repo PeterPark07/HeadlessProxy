@@ -1,6 +1,6 @@
 from flask import Flask, Response
 from selenium import webdriver
-from setup import chromedriver_destination
+from setup import chromedriver_destination, chrome_destination
 
 app = Flask(__name__)
 
