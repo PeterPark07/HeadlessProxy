@@ -5,12 +5,17 @@ from setup import chromedriver_destination, chrome_destination
 app = Flask(__name__)
 
 def render_page(url):
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
+    # Configure Chrome options
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
     
-    # Adjust the path to your chromedriver executable
-    driver = webdriver.Chrome(executable_path=chromedriver_destination, options=options)
+    # Set the paths for Chrome and Chromedriver
+    chrome_options.binary_location = chrome_destination
+    chromedriver_path = chromedriver_destination
+    
+    # Create Chrome webdriver instance
+    driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
     
     driver.get(url)
     rendered_page = driver.page_source
