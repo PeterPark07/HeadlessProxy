@@ -1,4 +1,4 @@
-from flask import Flask, Response, render_template
+from flask import Flask, Response
 from selenium import webdriver
 from setup import chromedriver_destination
 
@@ -23,7 +23,7 @@ def render_page(url):
 def proxy(url):
     try:
         rendered_page = render_page(url)
-        return render_template('rendered_page.html', content=rendered_page)
+        return Response(rendered_page, content_type='text/html')
     except Exception as e:
         return str(e)
 
