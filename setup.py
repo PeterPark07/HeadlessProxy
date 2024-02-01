@@ -30,5 +30,5 @@ download_and_extract(chromedriver_url, chromedriver_destination)
 
 chromedriver_destination = os.path.abspath(chromedriver_destination)
 chrome_destination = os.path.abspath(chrome_destination)
-print(f'Chromedriver Path: {chromedriver_destination}\nChrome Path: {chrome_destination})
+print(f'Chromedriver Path: {chromedriver_destination}\nChrome Path: {chrome_destination}')
 
