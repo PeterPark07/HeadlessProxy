@@ -1,4 +1,4 @@
-from flask import Flask, Response
+from flask import Flask, Response, render_template
 from selenium import webdriver
 from setup import chromedriver_destination
 
