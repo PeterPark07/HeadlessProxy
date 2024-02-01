@@ -10,6 +10,8 @@ def render_page(url):
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--enable-logging')
+    chrome_options.add_argument('--v=1')
     
     # Set the paths for Chrome and Chromedriver
     chrome_options.binary_location = chrome_destination
