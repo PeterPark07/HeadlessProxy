@@ -28,8 +28,17 @@ chromedriver_url = 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/
 chromedriver_destination = os.path.join(download_dir, 'chromedriver')
 download_and_extract(chromedriver_url, chromedriver_destination)
 
+# Print contents of the download directory
+print(f'Download Directory Contents: {os.listdir(download_dir)}')
+
+# Print contents of Chrome and Chromedriver directories
+print(f'Chrome Directory Contents: {os.listdir(chrome_destination)}')
+print(f'Chromedriver Directory Contents: {os.listdir(chromedriver_destination)}')
+
+# Set executable permissions for Chromedriver
 chromedriver_destination = os.path.abspath(chromedriver_destination)
 chrome_destination = os.path.abspath(chrome_destination)
 os.chmod(chromedriver_destination, 0o755)
-print(f'Chromedriver Path: {chromedriver_destination}\nChrome Path: {chrome_destination}')
 
+# Print paths for verification
+print(f'Chromedriver Path: {chromedriver_destination}\nChrome Path: {chrome_destination}')
