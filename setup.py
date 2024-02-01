@@ -23,4 +23,5 @@ chromedriver_url = 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/
 chromedriver_destination = os.path.join(download_dir, 'chromedriver')
 download_and_extract(chromedriver_url, chromedriver_destination)
 
-print(f'ChromeDriver: {chromedriver_destination}')
+chromedriver_destination = os.path.abspath(chromedriver_destination)
+print(f'Chromedriver Path: {chromedriver_destination}')
