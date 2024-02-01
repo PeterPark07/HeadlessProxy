@@ -30,13 +30,6 @@ chromedriver_destination = os.path.join(download_dir, 'chromedriver-linux64')
 download_and_extract(chromedriver_url, chromedriver_destination)
 chromedriver_destination = os.path.join(chromedriver_destination, 'chromedriver-linux64/chromedriver')
 
-# Print contents of the download directory
-print(f'Download Directory Contents: {os.listdir(download_dir)}')
-
-# Print contents of Chrome and Chromedriver directories
-print(f'Chrome Directory Contents: {os.listdir(chrome_destination)}')
-print(f'Chromedriver Directory Contents: {os.listdir(chromedriver_destination)}')
-
 # Set executable permissions for Chromedriver
 chromedriver_destination = os.path.abspath(chromedriver_destination)
 chrome_destination = os.path.abspath(chrome_destination)
