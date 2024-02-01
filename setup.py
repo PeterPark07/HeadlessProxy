@@ -20,15 +20,15 @@ download_dir = './'
 
 # Download and extract Chrome
 chrome_url = 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.85/linux64/chrome-linux64.zip'
-chrome_destination = download_dir
-download_and_extract(chrome_url, chrome_destination)
 chrome_destination = os.path.join(download_dir, 'chrome-linux64')
+download_and_extract(chrome_url, chrome_destination)
+chrome_destination = os.path.join(chrome_destination, 'chrome-linux64')
 
 # Download and extract ChromeDriver
 chromedriver_url = 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.85/linux64/chromedriver-linux64.zip'
-chromedriver_destination = download_dir
-download_and_extract(chromedriver_url, chromedriver_destination)
 chromedriver_destination = os.path.join(download_dir, 'chromedriver-linux64')
+download_and_extract(chromedriver_url, chromedriver_destination)
+chromedriver_destination = os.path.join(chromedriver_destination, 'chromedriver-linux64')
 
 # Print contents of the download directory
 print(f'Download Directory Contents: {os.listdir(download_dir)}')
