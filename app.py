@@ -23,7 +23,7 @@ def render_page(url):
 def proxy(url):
     try:
         rendered_page = render_page(url)
-        return Response(rendered_page, content_type='text/html')
+        return render_template('rendered_page.html', content=rendered_page)
     except Exception as e:
         return str(e)
 
