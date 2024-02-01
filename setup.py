@@ -24,16 +24,5 @@ chrome_destination = os.path.join(download_dir, 'chrome-linux64')
 download_and_extract(chrome_url, chrome_destination)
 chrome_destination = os.path.join(chrome_destination, 'chrome-linux64/chrome')
 
-# Download and extract ChromeDriver
-chromedriver_url = 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/121.0.6167.85/linux64/chromedriver-linux64.zip'
-chromedriver_destination = os.path.join(download_dir, 'chromedriver-linux64')
-download_and_extract(chromedriver_url, chromedriver_destination)
-chromedriver_destination = os.path.join(chromedriver_destination, 'chromedriver-linux64/chromedriver')
-
-# Set executable permissions for Chromedriver
-chromedriver_destination = os.path.abspath(chromedriver_destination)
 chrome_destination = os.path.abspath(chrome_destination)
-os.chmod(chromedriver_destination, 0o755)
 os.chmod(chrome_destination, 0o755)
-# Print paths for verification
-print(f'Chromedriver Path: {chromedriver_destination}\nChrome Path: {chrome_destination}')
