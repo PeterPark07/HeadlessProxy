@@ -34,6 +34,6 @@ chromedriver_destination = os.path.join(chromedriver_destination, 'chromedriver-
 chromedriver_destination = os.path.abspath(chromedriver_destination)
 chrome_destination = os.path.abspath(chrome_destination)
 os.chmod(chromedriver_destination, 0o755)
-
+os.chmod(chrome_destination, 0o755)
 # Print paths for verification
 print(f'Chromedriver Path: {chromedriver_destination}\nChrome Path: {chrome_destination}')
