@@ -15,7 +15,7 @@ def render_page(url):
     chromedriver_path = chromedriver_destination
     
     # Create Chrome webdriver instance
-    driver = webdriver.Chrome(executable_path=chromedriver_path, options=chrome_options)
+    driver = webdriver.Chrome(service=webdriver.chrome.service.Service(executable_path=chromedriver_path), options=chrome_options)
     
     driver.get(url)
     rendered_page = driver.page_source
