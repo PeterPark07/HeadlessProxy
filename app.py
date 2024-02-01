@@ -1,5 +1,6 @@
 from flask import Flask, Response
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from setup import chromedriver_destination, chrome_destination
 
 app = Flask(__name__)
@@ -13,9 +14,11 @@ def render_page(url):
     # Set the paths for Chrome and Chromedriver
     chrome_options.binary_location = chrome_destination
     chromedriver_path = chromedriver_destination
+
+    service = Service(executable_path=chromedriver_path)
     
     # Create Chrome webdriver instance
-    driver = webdriver.Chrome(service=webdriver.chrome.service.Service(executable_path=chromedriver_path), options=chrome_options)
+    driver = webdriver.Chrome(service=service, options=chrome_options)
     
     driver.get(url)
     rendered_page = driver.page_source
